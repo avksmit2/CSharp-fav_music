@@ -13,7 +13,7 @@ namespace FavoriteMusic.Objects
     {
       _title = title;
       _artist = artist;
-      _id = _albums.Count;
+      _albumId = _albums.Count;
       _albums.Add(this);
     }
     public string GetTitle()
