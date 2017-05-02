@@ -42,7 +42,7 @@ namespace FavoriteMusic.Objects
     }
     public static Album Find(int searchID)
     {
-      return _albums[searchId-1];
+      return _albums[searchID-1];
     }
   }
 }
