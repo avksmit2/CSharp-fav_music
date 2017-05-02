@@ -1,0 +1,15 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>All Albums</h1>
+@if (@Album.Count == 0)
+{
+  <h3>No albums have been added yet!</h3>
+  <p><a href="/">Choose a category to add album to.</a></p>
+}
+@foreach (var album in Model)
+{
+<h3><a href="/albums/@album.GetAlbumId()">@album.GetTitle()</a></h3>
+}
+<p><a href="/">Home</a></p>
