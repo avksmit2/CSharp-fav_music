@@ -1,7 +1,6 @@
 using Nancy;
 using FavoriteMusic.Objects;
 using System.Collections.Generic;
-using FavoriteMusic.Objects;
 
 namespace FavoriteMusic
 {
