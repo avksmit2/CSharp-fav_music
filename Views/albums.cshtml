@@ -10,6 +10,8 @@
 }
 @foreach (var album in Model)
 {
-<h3><a href="/albums/@album.GetAlbumId()">@album.GetTitle()</a></h3>
+  <ul>
+    <li><a href="/album/@album.GetAlbumId()">@album.GetTitle() by @album.GetArtist()</a></li>
+  </ul>
 }
 <p><a href="/">Home</a></p>

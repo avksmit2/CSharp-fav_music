@@ -7,11 +7,13 @@
 {
   <h3>No categories have been created yet.</h3>
 } else {
-  <h3>Choose a category to see albums:</h3>
+  <h3>Choose a category to see albums or <a href='/categories/new'>Add a category</a></h3>
   @foreach (var category in Model)
   {
-    <h5><a href="/categories/@category.GetId()">@category.GetName()</a></h5>
+    <ul>
+    <li><a href="/categories/@category.GetId()">@category.GetName()</a></li>
+    </ul>
   }
 }
-<h3><a href='/categories/new'>Add a category</a></h3>
-<p><a href="/albums">View all Albums</a></p>
+<hr>
+<h3><a href="/albums">View all Albums</a></h3>

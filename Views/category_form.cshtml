@@ -3,10 +3,11 @@
 }
 
 <h1>Add a category</h1>
-<p>Add a category here:</p>
 <form action="/categories" method="post">
-  <label for="category-name">Category name:</label>
-  <input type="text" name="category-name" required>
-  <button type="submit">Add</button>
+  <div class="container">
+    <label for="category-name">Category name:</label>
+    <input type="text" name="category-name" required>
+    <button class="btn btn-success" type="submit">Add</button>
+  </div>
 </form>
 <p><a href="/">Back Home</a></p>
