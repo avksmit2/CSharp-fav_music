@@ -30,7 +30,7 @@ namespace FavoriteMusic
         var categoryAlbums = selectedCategory.GetAlbums();
         model.Add("category", selectedCategory);
         model.Add("albums", categoryAlbums);
-        return View["category.cshmtl", model];
+        return View["category.cshtml", model];
       };
       Get["/albums"] = _ => {
         var allAlbums = Album.GetAllAlbums();
