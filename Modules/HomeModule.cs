@@ -32,6 +32,26 @@ namespace FavoriteMusic
         model.Add("albums", categoryAlbums);
         return View["category.cshtml", model];
       };
+      Get["/categories/{id}/albums/new"] = parameters => {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Category selectedCategory = Category.Find(parameters.id);
+        List<Album> allAlbums = selectedCategory.GetAlbums();
+        model.Add("category", selectedCategory);
+        model.Add("albums", allAlbums);
+        return View["category_albums_form.cshtml", model];
+      };
+      Post["/albums"] = _ => {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Category selectedCategory = Category.Find(Request.Form["category-id"]);
+        List<Album> categoryAlbums = selectedCategory.GetAlbums();
+        string albumTitle = Request.Form["album-title"];
+        string albumArtist = Request.Form["album-artist"];
+        Album newAlbum = new Album(albumTitle, albumArtist);
+        categoryAlbums.Add(newAlbum);
+        model.Add("albums", categoryAlbums);
+        model.Add("category", selectedCategory);
+        return View["category.cshtml", model];
+      };
       Get["/albums"] = _ => {
         var allAlbums = Album.GetAllAlbums();
         return View["albums.cshtml", allAlbums];

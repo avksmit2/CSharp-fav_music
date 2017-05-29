@@ -1,0 +1,14 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Add a new album to @Model["category"].GetName()</h1>
+
+<form action='/albums' method='post'>
+  <input id='category-id' name='category-id' type='hidden' value='@Model["category"].GetId()'>
+  <label for="album-title">Title:</label>
+  <input id="album-title" name="album-title" type="text" required>
+  <label for="album-artist">Artist:</label>
+  <input id="album-artist" name="album-artist" type="text">
+  <button type="submit">Add Album</button>
+</form>
