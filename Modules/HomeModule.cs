@@ -56,7 +56,7 @@ namespace FavoriteMusic
         var allAlbums = Album.GetAllAlbums();
         return View["albums.cshtml", allAlbums];
       };
-      Get["/albums/{id}"] = parameters => {
+      Get["/album/{id}"] = parameters => {
         var selectedAlbum = Album.Find(parameters.id);
         return View["album.cshtml", selectedAlbum];
       };

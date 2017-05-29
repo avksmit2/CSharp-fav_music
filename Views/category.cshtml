@@ -2,7 +2,6 @@
   Layout="Shared/_Layout.cshtml";
 }
 
-<h1>Albums</h1>
 @if (@Model["albums"].Count == 0)
 {
   <h3>No albums have been added yet!</h3>
@@ -11,7 +10,7 @@
   <ol>
   @foreach (var album in @Model["albums"])
   {
-    <li>@album.GetTitle()</li>
+    <li><a href='/album/@album.GetAlbumId()'>@album.GetTitle() by @album.GetArtist()</a></li>
   }
   </ol>
 }
