@@ -32,7 +32,7 @@ namespace FavoriteMusic.Objects
     {
       _albums.Add(album);
     }
-    public static List<Category> GetAll()
+    public static List<Category> GetAllCategories()
     {
       return _instances;
     }

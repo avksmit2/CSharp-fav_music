@@ -9,7 +9,20 @@ namespace FavoriteMusic
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        var allCategories = Category.GetAllCategories();
+        return View["index.cshtml", allCategories];
+      };
+      Get["/categories"] = _ => {
+        var allCategories = Category.GetAllCategories();
+        return View["categories.cshtml", allCategories];
+      };
+      Get["/categories/new"] = _ => {
+        return View["category_form.cshtml"];
+      };
+      Post["categories"] = _ => {
+        var newCategory = new Category(Request.Form["category-name"]);
+        var allCategories = Category.GetAllCategories();
+        return View["categories.cshtml", allCategories];
       };
       Get["/albums"] = _ => {
         var allAlbums = Album.GetAllAlbums();
