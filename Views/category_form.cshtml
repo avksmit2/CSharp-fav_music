@@ -1,0 +1,12 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h1>Add a category</h1>
+<p>Add a category here:</p>
+<form action="/categories" method="post">
+  <label for="category-name">Category name:</label>
+  <input type="text" name="category-name" required>
+  <button type="submit">Add</button>
+</form>
+<p><a href="/">Back Home</a></p>
