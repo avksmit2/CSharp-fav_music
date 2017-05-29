@@ -24,6 +24,14 @@ namespace FavoriteMusic
         var allCategories = Category.GetAllCategories();
         return View["categories.cshtml", allCategories];
       };
+      Get["/categories/{id}"] = parameters => {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        var selectedCategory = Category.Find(parameters.id);
+        var categoryAlbums = selectedCategory.GetAlbums();
+        model.Add("category", selectedCategory);
+        model.Add("albums", categoryAlbums);
+        return View["category.cshmtl", model];
+      };
       Get["/albums"] = _ => {
         var allAlbums = Album.GetAllAlbums();
         return View["albums.cshtml", allAlbums];
