@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace FavoriteMusic.Objects
@@ -43,6 +44,10 @@ namespace FavoriteMusic.Objects
     public static Album Find(int searchID)
     {
       return _albums[searchID];
+    }
+    public static Album FindArtist(string searchArtist)
+    {
+      return _albums.Find(x => x._artist.Contains(searchArtist));
     }
   }
 }
